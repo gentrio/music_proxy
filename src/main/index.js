@@ -1,5 +1,5 @@
 import { app, BrowserWindow, Tray, Menu } from 'electron'
-import { isConfig, start, stop } from '../music/host'
+import run from '../music/src/app'
 
 /**
  * Set `__static` path to static files in production
@@ -62,11 +62,10 @@ function createMenuTemplate() {
     {
       label: `${isRunning ? '停止' : '启动'}`,
       click: () => {
-        console.log(isConfig())
         if(isRunning){
-          stop()
+          
         }else{
-          start()
+          run('80:443', "59.111.181.60")
         }
         isRunning = !isRunning
       }
