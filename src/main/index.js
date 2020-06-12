@@ -15,7 +15,6 @@ const winURL = process.env.NODE_ENV === 'development'
   : `file://${__dirname}/index.html`
 
 let isRunning = false
-stop()
 
 function createWindow() {
   /**
@@ -89,10 +88,6 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
   }
-})
-
-app.on('before-quit', () => {
-  stop()
 })
 
 /**
